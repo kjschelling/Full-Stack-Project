@@ -3,9 +3,9 @@ class CreateMannequins < ActiveRecord::Migration[5.1]
     create_table :mannequins do |t|
       t.string :given_name
       t.string :surname
-      t.integer :height
-      t.integer :weight
-      t.integer :age
+      t.string :height
+      t.string :weight
+      t.string :age
       t.string :measurements
       t.string :eye_color
       t.string :hair_color
