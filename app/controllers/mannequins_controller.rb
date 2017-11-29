@@ -1,0 +1,51 @@
+class MannequinsController < ApplicationController
+  before_action :set_mannequin, only: [:show, :update, :destroy]
+
+  # GET /mannequins
+  def index
+    @mannequins = Mannequin.all
+
+    render json: @mannequins
+  end
+
+  # GET /mannequins/1
+  def show
+    render json: @mannequin
+  end
+
+  # POST /mannequins
+  def create
+    @mannequin = Mannequin.new(mannequin_params)
+
+    if @mannequin.save
+      render json: @mannequin, status: :created, location: @mannequin
+    else
+      render json: @mannequin.errors, status: :unprocessable_entity
+    end
+  end
+
+  # PATCH/PUT /mannequins/1
+  def update
+    if @mannequin.update(mannequin_params)
+      render json: @mannequin
+    else
+      render json: @mannequin.errors, status: :unprocessable_entity
+    end
+  end
+
+  # DELETE /mannequins/1
+  def destroy
+    @mannequin.destroy
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_mannequin
+      @mannequin = Mannequin.find(params[:id])
+    end
+
+    # Only allow a trusted parameter "white list" through.
+    def mannequin_params
+      params.require(:mannequin).permit(:given_name, :surname, :height, :weight, :age, :measurements, :eye_color, :hair_color, :hair_length, :gender)
+    end
+end
