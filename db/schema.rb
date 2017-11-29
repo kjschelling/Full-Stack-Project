@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171129162331) do
+ActiveRecord::Schema.define(version: 20171129200534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,9 +26,6 @@ ActiveRecord::Schema.define(version: 20171129162331) do
   create_table "mannequins", force: :cascade do |t|
     t.string "given_name"
     t.string "surname"
-    t.integer "height"
-    t.integer "weight"
-    t.integer "age"
     t.string "measurements"
     t.string "eye_color"
     t.string "hair_color"
