@@ -1,9 +1,9 @@
-class MannequinsController < ApplicationController
+class MannequinsController < ProtectedController
   before_action :set_mannequin, only: [:show, :update, :destroy]
 
   # GET /mannequins
   def index
-    @mannequins = Mannequin.all
+    @mannequins = current_user.mannequins.all
 
     render json: @mannequins
   end
@@ -15,7 +15,7 @@ class MannequinsController < ApplicationController
 
   # POST /mannequins
   def create
-    @mannequin = Mannequin.new(mannequin_params)
+    @mannequin = current_user.mannequins.new(mannequin_params)
 
     if @mannequin.save
       render json: @mannequin, status: :created, location: @mannequin
@@ -41,7 +41,7 @@ class MannequinsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_mannequin
-      @mannequin = Mannequin.find(params[:id])
+      @mannequin = current_user.mannequins.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
