@@ -1,1 +1,2 @@
 DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/kjschelling/wdi/projects/FullStack/backend/config/initializers/new_framework_defaults.rb:18)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/kjschelling/wdi/projects/FullStack/backend/config/initializers/new_framework_defaults.rb:18)
