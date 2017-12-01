@@ -11,7 +11,6 @@ curl "${API}${URL_PATH}" \
       "surname": "'"${LAST}"'",
       "height": "'"${HEIGHT}"'",
       "weight": "'"${WEIGHT}"'",
-      "age": "'"${AGE}"'",
       "measurements": "'"${MEASUREMENTS}"'",
       "eye_color": "'"${EYECOLOR}"'",
       "hair_color": "'"${HAIRCOLOR}"'",

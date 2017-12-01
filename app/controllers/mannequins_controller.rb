@@ -46,6 +46,6 @@ class MannequinsController < ProtectedController
 
     # Only allow a trusted parameter "white list" through.
     def mannequin_params
-      params.require(:mannequin).permit(:given_name, :surname, :height, :weight, :age, :measurements, :eye_color, :hair_color, :hair_length, :gender)
+      params.require(:mannequin).permit(:given_name, :surname, :height, :weight, :measurements, :eye_color, :hair_color, :hair_length, :gender)
     end
 end
