@@ -411,3 +411,1816 @@ Filter chain halted as :authenticate rendered or redirected
 Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
 
 
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/kjschelling/wdi/projects/FullStack/backend/config/initializers/new_framework_defaults.rb:18)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/kjschelling/wdi/projects/FullStack/backend/config/initializers/new_framework_defaults.rb:18)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/kjschelling/wdi/projects/FullStack/backend/config/initializers/new_framework_defaults.rb:18)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/kjschelling/wdi/projects/FullStack/backend/config/initializers/new_framework_defaults.rb:18)
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-29 16:16:30 -0500
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 14ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/mannequins/" for 127.0.0.1 at 2017-11-29 16:17:14 -0500
+Processing by MannequinsController#index as */*
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/kjschelling/wdi/projects/FullStack/backend/config/initializers/new_framework_defaults.rb:18)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/kjschelling/wdi/projects/FullStack/backend/config/initializers/new_framework_defaults.rb:18)
+Started POST "/sign-up" for 127.0.0.1 at 2017-11-30 09:47:07 -0500
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#signup as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "submit"=>"Sign up!"}
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (13.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (27.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "kj"], ["token", "1227d4fb1b542f3d3cad14301334013a"], ["password_digest", "$2a$10$npxiGYs8WVTHPRXXW8hzIOXISO9VXPuWsQP4EKjZ1OQyVEh6nZT0i"], ["created_at", "2017-11-30 14:47:08.471079"], ["updated_at", "2017-11-30 14:47:08.471079"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "kj"], ["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (1.77ms)
+Completed 201 Created in 179ms (Views: 12.6ms | ActiveRecord: 70.5ms)
+
+
+Started POST "/sign-up" for 127.0.0.1 at 2017-11-30 09:48:59 -0500
+Processing by UsersController#signup as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "submit"=>"Sign up!"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35m (6.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.13ms)
+Completed 400 Bad Request in 95ms (Views: 5.0ms | ActiveRecord: 11.9ms)
+
+
+Started POST "/sign-up" for 127.0.0.1 at 2017-11-30 09:49:12 -0500
+Processing by UsersController#signup as */*
+  Parameters: {"credentials"=>{"email"=>"jk", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "submit"=>"Sign up!"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jk"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "jk"], ["token", "be64bf2c59383abf253476bf82e2b394"], ["password_digest", "$2a$10$l26ZcniscAuRAb7uQdgrTeXVcX1eEFQDjvcRTPdMHMHe5IdV2jep2"], ["created_at", "2017-11-30 14:49:12.849413"], ["updated_at", "2017-11-30 14:49:12.849413"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "jk"], ["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.2ms)
+Completed 201 Created in 71ms (Views: 0.7ms | ActiveRecord: 2.7ms)
+
+
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/kjschelling/wdi/projects/FullStack/backend/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6709459509110176350)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserToMannequins (20171130145817)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (26.3ms)[0m  [1m[35mALTER TABLE "mannequins" ADD "user" reference[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6709459509110176350)[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/kjschelling/wdi/projects/FullStack/backend/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6709459509110176350)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserToMannequins (20171130145817)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.9ms)[0m  [1m[35mALTER TABLE "mannequins" ADD "user" reference[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6709459509110176350)[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/kjschelling/wdi/projects/FullStack/backend/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6709459509110176350)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserToMannequins (20171130145817)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "mannequins" ADD "user" reference[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6709459509110176350)[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/kjschelling/wdi/projects/FullStack/backend/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6709459509110176350)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveUserFromMannequins (20171130150329)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.5ms)[0m  [1m[35mALTER TABLE "mannequins" DROP "user"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6709459509110176350)[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/kjschelling/wdi/projects/FullStack/backend/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6709459509110176350)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAgeToMannequin (20171129201143)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (26.3ms)[0m  [1m[35mALTER TABLE "mannequins" DROP "age"[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20171129201143"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6709459509110176350)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/kjschelling/wdi/projects/FullStack/backend/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6709459509110176350)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAgeToMannequin (20171129201143)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (24.6ms)[0m  [1m[35mALTER TABLE "mannequins" ADD "age" character varying[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171129201143"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveUserFromMannequins (20171130150329)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "mannequins" DROP "user"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6709459509110176350)[0m
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 10:59:40 -0500
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 10:59:50 -0500
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 10:59:50 -0500
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 10:59:50 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.3) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.3) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.3) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.3) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.3) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.3) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.3) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.3) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 10:59:56 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.3) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.3) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 10:59:57 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.3) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.3) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 11:05:43 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.3) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.3) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/sign-up" for 127.0.0.1 at 2017-11-30 11:08:52 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.3) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.3) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/sign-up" for 127.0.0.1 at 2017-11-30 11:09:40 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.3) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.3) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 11:11:58 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.3) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.3) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/sign-up" for 127.0.0.1 at 2017-11-30 11:13:22 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.3) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.3) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/sign-up" for 127.0.0.1 at 2017-11-30 11:21:58 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.3) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.3) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/kjschelling/wdi/projects/FullStack/backend/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6709459509110176350)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveUserFromMannequins (20171130150329)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.8ms)[0m  [1m[35mALTER TABLE "mannequins" DROP "user"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6709459509110176350)[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/kjschelling/wdi/projects/FullStack/backend/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6709459509110176350)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAgeToMannequins (20171130151037)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "mannequins" ADD "age" character varying[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6709459509110176350)[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/kjschelling/wdi/projects/FullStack/backend/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6709459509110176350)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAgeToMannequins (20171130151037)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "mannequins" ADD "age" character varying[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6709459509110176350)[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/kjschelling/wdi/projects/FullStack/backend/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6709459509110176350)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAgeToMannequins (20171130151037)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "mannequins" ADD "age" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6709459509110176350)[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/kjschelling/wdi/projects/FullStack/backend/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6709459509110176350)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAgeToMannequins (20171130151037)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.9ms)[0m  [1m[35mALTER TABLE "mannequins" ADD "age" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6709459509110176350)[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/kjschelling/wdi/projects/FullStack/backend/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/kjschelling/wdi/projects/FullStack/backend/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/kjschelling/wdi/projects/FullStack/backend/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6709459509110176350)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAgeToMannequins (20171130151037)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "mannequins" ADD "age" character varying[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6709459509110176350)[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/kjschelling/wdi/projects/FullStack/backend/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6709459509110176350)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6709459509110176350)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/kjschelling/wdi/projects/FullStack/backend/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6709459509110176350)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6709459509110176350)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/kjschelling/wdi/projects/FullStack/backend/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6709459509110176350)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveAgeFromMannequins (20171130164851)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "mannequins" DROP "age"[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171130164851"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6709459509110176350)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/kjschelling/wdi/projects/FullStack/backend/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6709459509110176350)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserToMannequins (20171130165111)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "mannequins" ADD "user_id" bigint[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE  INDEX  "index_mannequins_on_user_id" ON "mannequins"  ("user_id")[0m
+  [1m[35m (30.0ms)[0m  [1m[35mALTER TABLE "mannequins" ADD CONSTRAINT "fk_rails_b8135e56a3"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171130165111"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6709459509110176350)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/sign-up" for 127.0.0.1 at 2017-11-30 11:52:14 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#signup as */*
+  Parameters: {"credentials"=>{"email"=>"mike33", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "submit"=>"Sign up!"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike33"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "mike33"], ["token", "db9f6fe3a194507e1ab0a11b6dfbc29f"], ["password_digest", "$2a$10$3uIsqVZKYSk1jUbPc3p13.Rjl8HR4f5UGjwEV..CdE1wfsoNntiKG"], ["created_at", "2017-11-30 16:52:14.839011"], ["updated_at", "2017-11-30 16:52:14.839011"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "mike33"], ["id", 3], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.43ms)
+Completed 201 Created in 90ms (Views: 2.1ms | ActiveRecord: 6.5ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 11:52:24 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (12.7ms)[0m  [1m[33mUPDATE "users" SET "token" = 'd11e862ec6e1b1170974954c9a7c064e', "updated_at" = '2017-11-30 16:52:24.088498' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (5.59ms)
+Completed 200 OK in 96ms (Views: 6.1ms | ActiveRecord: 13.3ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 11:54:03 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE "users" SET "token" = '50846fbbbf68ce142f2d4236eb217731', "updated_at" = '2017-11-30 16:54:03.964457' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.18ms)
+Completed 200 OK in 71ms (Views: 0.8ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 11:56:19 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (6.8ms)[0m  [1m[33mUPDATE "users" SET "token" = '1a0250cdd8ff7dcf67d62e4121d73645', "updated_at" = '2017-11-30 16:56:19.155890' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.18ms)
+Completed 200 OK in 79ms (Views: 0.6ms | ActiveRecord: 7.1ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 11:57:03 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[33mUPDATE "users" SET "token" = '6d11f1b8c6678bb6678f0ab461ceea73', "updated_at" = '2017-11-30 16:57:03.286247' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.2ms)
+Completed 200 OK in 69ms (Views: 0.7ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 11:57:19 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (6.5ms)[0m  [1m[33mUPDATE "users" SET "token" = '605ee9b57ab4414ed3b210e5db688ac1', "updated_at" = '2017-11-30 16:57:19.253778' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.17ms)
+Completed 200 OK in 78ms (Views: 0.6ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 13:51:59 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (4.7ms)[0m  [1m[33mUPDATE "users" SET "token" = '5ed804523f5319c855ecd9b522bc6efb', "updated_at" = '2017-11-30 18:51:59.781779' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (1.72ms)
+Completed 200 OK in 105ms (Views: 4.1ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/mannequins" for 127.0.0.1 at 2017-11-30 13:52:25 -0500
+Processing by MannequinsController#create as */*
+  Parameters: {"submit"=>"Create"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "5ed804523f5319c855ecd9b522bc6efb"], ["LIMIT", 1]]
+Completed 400 Bad Request in 68ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: mannequin):
+  
+app/controllers/mannequins_controller.rb:49:in `mannequin_params'
+app/controllers/mannequins_controller.rb:18:in `create'
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 14:00:49 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (7.4ms)[0m  [1m[33mUPDATE "users" SET "token" = '9e677a3c3d8544832dd13fc5b3e252d9', "updated_at" = '2017-11-30 19:00:49.915239' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.22ms)
+Completed 200 OK in 81ms (Views: 0.7ms | ActiveRecord: 8.2ms)
+
+
+Started POST "/mannequins" for 127.0.0.1 at 2017-11-30 14:01:11 -0500
+Processing by MannequinsController#create as */*
+  Parameters: {"submit"=>"Create"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "9e677a3c3d8544832dd13fc5b3e252d9"], ["LIMIT", 1]]
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: mannequin):
+  
+app/controllers/mannequins_controller.rb:49:in `mannequin_params'
+app/controllers/mannequins_controller.rb:18:in `create'
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 14:02:20 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (6.8ms)[0m  [1m[33mUPDATE "users" SET "token" = '550797038225679d6c0f514b44cd9764', "updated_at" = '2017-11-30 19:02:20.216876' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.44ms)
+Completed 200 OK in 78ms (Views: 0.8ms | ActiveRecord: 7.1ms)
+
+
+Started POST "/mannequins" for 127.0.0.1 at 2017-11-30 14:02:44 -0500
+Processing by MannequinsController#create as */*
+  Parameters: {"submit"=>"Create"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "550797038225679d6c0f514b44cd9764"], ["LIMIT", 1]]
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: mannequin):
+  
+app/controllers/mannequins_controller.rb:49:in `mannequin_params'
+app/controllers/mannequins_controller.rb:18:in `create'
+Started POST "/mannequins" for 127.0.0.1 at 2017-11-30 14:03:02 -0500
+Processing by MannequinsController#create as */*
+  Parameters: {"submit"=>"Create"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "550797038225679d6c0f514b44cd9764"], ["LIMIT", 1]]
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: mannequin):
+  
+app/controllers/mannequins_controller.rb:49:in `mannequin_params'
+app/controllers/mannequins_controller.rb:18:in `create'
+Started DELETE "/sign-out/1" for 127.0.0.1 at 2017-11-30 14:06:11 -0500
+Processing by UsersController#signout as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "550797038225679d6c0f514b44cd9764"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[33mUPDATE "users" SET "token" = '3a12112735906ff0594ce833db952024', "updated_at" = '2017-11-30 19:06:11.050066' WHERE "users"."id" = $1[0m  [["id", 1]]
+Completed 204 No Content in 11ms (ActiveRecord: 7.4ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 14:07:28 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[33mUPDATE "users" SET "token" = '9749bd3b4595da3b427286993cbb24a3', "updated_at" = '2017-11-30 19:07:28.760282' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.23ms)
+Completed 200 OK in 70ms (Views: 0.6ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 14:08:26 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[33mUPDATE "users" SET "token" = '60a8999a98c5fa89abdd7f80fa53b747', "updated_at" = '2017-11-30 19:08:26.336074' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.23ms)
+Completed 200 OK in 70ms (Views: 0.7ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/mannequins" for 127.0.0.1 at 2017-11-30 14:08:48 -0500
+Processing by MannequinsController#create as */*
+  Parameters: {"submit"=>"Create"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "60a8999a98c5fa89abdd7f80fa53b747"], ["LIMIT", 1]]
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: mannequin):
+  
+app/controllers/mannequins_controller.rb:49:in `mannequin_params'
+app/controllers/mannequins_controller.rb:18:in `create'
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 14:10:40 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (1.6ms)[0m  [1m[33mUPDATE "users" SET "token" = 'aa467ce5816b52cf067574f514e7ad2c', "updated_at" = '2017-11-30 19:10:40.190151' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.24ms)
+Completed 200 OK in 68ms (Views: 0.7ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/mannequins" for 127.0.0.1 at 2017-11-30 14:10:58 -0500
+Processing by MannequinsController#create as */*
+  Parameters: {"submit"=>"Create"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "aa467ce5816b52cf067574f514e7ad2c"], ["LIMIT", 1]]
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: mannequin):
+  
+app/controllers/mannequins_controller.rb:49:in `mannequin_params'
+app/controllers/mannequins_controller.rb:18:in `create'
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 14:16:41 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (6.3ms)[0m  [1m[33mUPDATE "users" SET "token" = '77eac8794ad3b93672f9a6928da49966', "updated_at" = '2017-11-30 19:16:41.753641' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.24ms)
+Completed 200 OK in 75ms (Views: 0.6ms | ActiveRecord: 6.5ms)
+
+
+Started POST "/mannequins" for 127.0.0.1 at 2017-11-30 14:16:55 -0500
+Processing by MannequinsController#create as */*
+  Parameters: {"mannequin"=>{"given_name"=>"hah", "surname"=>"hsh", "measurements"=>"dhdhq", "eye_color"=>"jdj", "hair_color"=>"kdkd", "hair_length"=>"kdkd", "gender"=>"skdk", "height"=>"dkdk", "weight"=>"kdkd"}, "submit"=>"Create"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "77eac8794ad3b93672f9a6928da49966"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (23.4ms)[0m  [1m[32mINSERT INTO "mannequins" ("given_name", "surname", "measurements", "eye_color", "hair_color", "hair_length", "gender", "created_at", "updated_at", "height", "weight", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["given_name", "hah"], ["surname", "hsh"], ["measurements", "dhdhq"], ["eye_color", "jdj"], ["hair_color", "kdkd"], ["hair_length", "kdkd"], ["gender", "skdk"], ["created_at", "2017-11-30 19:16:55.955196"], ["updated_at", "2017-11-30 19:16:55.955196"], ["height", "dkdk"], ["weight", "kdkd"], ["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered MannequinSerializer with ActiveModelSerializers::Adapter::Json (0.52ms)
+Completed 201 Created in 68ms (Views: 4.1ms | ActiveRecord: 35.3ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 14:34:23 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[33mUPDATE "users" SET "token" = '69844441e99d9ae69c1d39866ab7eb63', "updated_at" = '2017-11-30 19:34:23.065407' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.21ms)
+Completed 200 OK in 78ms (Views: 0.7ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 14:34:55 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (1.4ms)[0m  [1m[33mUPDATE "users" SET "token" = 'e5d0190e18dd828f60e7a89072854a0c', "updated_at" = '2017-11-30 19:34:55.349596' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.21ms)
+Completed 200 OK in 71ms (Views: 0.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-11-30 14:34:57 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "e5d0190e18dd828f60e7a89072854a0c"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.5ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (0.69ms)
+Completed 200 OK in 7ms (Views: 2.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/mannequins" for 127.0.0.1 at 2017-11-30 14:35:47 -0500
+Processing by MannequinsController#create as */*
+  Parameters: {"mannequin"=>{"given_name"=>"KJ", "surname"=>"Schel", "measurements"=>"33-25-36", "eye_color"=>"brown", "hair_color"=>"brown", "hair_length"=>"long", "gender"=>"female", "height"=>"5'9", "weight"=>"125"}, "submit"=>"Create"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "e5d0190e18dd828f60e7a89072854a0c"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "mannequins" ("given_name", "surname", "measurements", "eye_color", "hair_color", "hair_length", "gender", "created_at", "updated_at", "height", "weight", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["given_name", "KJ"], ["surname", "Schel"], ["measurements", "33-25-36"], ["eye_color", "brown"], ["hair_color", "brown"], ["hair_length", "long"], ["gender", "female"], ["created_at", "2017-11-30 19:35:47.245053"], ["updated_at", "2017-11-30 19:35:47.245053"], ["height", "5'9"], ["weight", "125"], ["user_id", 1]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered MannequinSerializer with ActiveModelSerializers::Adapter::Json (0.52ms)
+Completed 201 Created in 12ms (Views: 1.6ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-11-30 14:35:56 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "e5d0190e18dd828f60e7a89072854a0c"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.8ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (0.58ms)
+Completed 200 OK in 6ms (Views: 1.8ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/mannequins" for 127.0.0.1 at 2017-11-30 14:40:06 -0500
+Processing by MannequinsController#create as */*
+  Parameters: {"mannequin"=>{"given_name"=>"", "surname"=>"Schel", "measurements"=>"33-25-36", "eye_color"=>"brown", "hair_color"=>"brown", "hair_length"=>"long", "gender"=>"female", "height"=>"5'9", "weight"=>"125"}, "submit"=>"Create"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "e5d0190e18dd828f60e7a89072854a0c"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "mannequins" ("given_name", "surname", "measurements", "eye_color", "hair_color", "hair_length", "gender", "created_at", "updated_at", "height", "weight", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["given_name", ""], ["surname", "Schel"], ["measurements", "33-25-36"], ["eye_color", "brown"], ["hair_color", "brown"], ["hair_length", "long"], ["gender", "female"], ["created_at", "2017-11-30 19:40:06.281351"], ["updated_at", "2017-11-30 19:40:06.281351"], ["height", "5'9"], ["weight", "125"], ["user_id", 1]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered MannequinSerializer with ActiveModelSerializers::Adapter::Json (0.4ms)
+Completed 201 Created in 8ms (Views: 1.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-11-30 14:40:23 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "e5d0190e18dd828f60e7a89072854a0c"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.6ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (0.79ms)
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 15:48:00 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[33mUPDATE "users" SET "token" = '3fd34bc7f248a48a90944e3be3d922b4', "updated_at" = '2017-11-30 20:48:00.033098' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (1.78ms)
+Completed 200 OK in 110ms (Views: 4.3ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-11-30 15:48:02 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "3fd34bc7f248a48a90944e3be3d922b4"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.6ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (3.13ms)
+Completed 200 OK in 17ms (Views: 8.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-11-30 15:48:44 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "3fd34bc7f248a48a90944e3be3d922b4"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.6ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.23ms)
+Completed 200 OK in 12ms (Views: 4.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-11-30 15:48:44 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "3fd34bc7f248a48a90944e3be3d922b4"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.6ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.01ms)
+Completed 200 OK in 10ms (Views: 5.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-11-30 15:48:45 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "3fd34bc7f248a48a90944e3be3d922b4"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.3ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.89ms)
+Completed 200 OK in 9ms (Views: 5.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 15:52:08 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (6.8ms)[0m  [1m[33mUPDATE "users" SET "token" = 'f10c878932ee058130057f11268c29f2', "updated_at" = '2017-11-30 20:52:08.286118' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.47ms)
+Completed 200 OK in 78ms (Views: 1.2ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-11-30 15:52:09 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "f10c878932ee058130057f11268c29f2"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.3ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.44ms)
+Completed 200 OK in 11ms (Views: 3.4ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 15:55:38 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (6.3ms)[0m  [1m[33mUPDATE "users" SET "token" = '7f75b4989dcfca7269650f47fa2690b3', "updated_at" = '2017-11-30 20:55:38.653993' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.44ms)
+Completed 200 OK in 77ms (Views: 1.1ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-11-30 15:55:40 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7f75b4989dcfca7269650f47fa2690b3"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.4ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.22ms)
+Completed 200 OK in 9ms (Views: 4.0ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 15:57:11 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "token" = '97c35de659c02c1d8c355c7d936c48cb', "updated_at" = '2017-11-30 20:57:11.631919' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.43ms)
+Completed 200 OK in 99ms (Views: 1.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-11-30 15:57:14 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "97c35de659c02c1d8c355c7d936c48cb"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.5ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.29ms)
+Completed 200 OK in 8ms (Views: 3.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 15:58:21 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[33mUPDATE "users" SET "token" = '235b61fef16b5b8e5106c9c9a524e829', "updated_at" = '2017-11-30 20:58:21.513509' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.25ms)
+Completed 200 OK in 72ms (Views: 0.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-11-30 15:58:23 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "235b61fef16b5b8e5106c9c9a524e829"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.4ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (0.77ms)
+Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 15:59:34 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[33mUPDATE "users" SET "token" = '3bd9b4af158122e3658bbbefd21c5a50', "updated_at" = '2017-11-30 20:59:34.396462' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.28ms)
+Completed 200 OK in 80ms (Views: 1.0ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-11-30 15:59:36 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "3bd9b4af158122e3658bbbefd21c5a50"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.4ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (0.91ms)
+Completed 200 OK in 6ms (Views: 2.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 16:03:51 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[33mUPDATE "users" SET "token" = '91f53b860f3485f5bd93b240be2c82e7', "updated_at" = '2017-11-30 21:03:51.574275' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.22ms)
+Completed 200 OK in 79ms (Views: 0.6ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-11-30 16:03:53 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "91f53b860f3485f5bd93b240be2c82e7"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.4ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (0.99ms)
+Completed 200 OK in 7ms (Views: 3.0ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 16:43:28 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (2.2ms)[0m  [1m[33mUPDATE "users" SET "token" = 'b07f7327d2f7d3ea7cdd90ed888afbbc', "updated_at" = '2017-11-30 21:43:29.007027' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (2.12ms)
+Completed 200 OK in 108ms (Views: 4.9ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 16:48:00 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (6.8ms)[0m  [1m[33mUPDATE "users" SET "token" = 'f56a06a8587c011517ea0a793b8000e0', "updated_at" = '2017-11-30 21:48:00.625817' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.36ms)
+Completed 200 OK in 78ms (Views: 0.7ms | ActiveRecord: 7.6ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-11-30 16:48:51 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (6.8ms)[0m  [1m[33mUPDATE "users" SET "token" = '6417fb7b3b73a9f2d7a7df0e19931487', "updated_at" = '2017-11-30 21:48:51.143940' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.49ms)
+Completed 200 OK in 80ms (Views: 1.5ms | ActiveRecord: 7.7ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-12-01 09:44:54 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (34.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (30.0ms)[0m  [1m[33mUPDATE "users" SET "token" = '546df321c9c3106872c932e8a57fea38', "updated_at" = '2017-12-01 14:44:54.800683' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (3.69ms)
+Completed 200 OK in 212ms (Views: 7.2ms | ActiveRecord: 64.2ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-12-01 09:44:56 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "546df321c9c3106872c932e8a57fea38"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (6.4ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.47ms)
+Completed 200 OK in 23ms (Views: 6.6ms | ActiveRecord: 7.3ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-12-01 09:46:52 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (6.7ms)[0m  [1m[33mUPDATE "users" SET "token" = '3a32f3ad6a641dd28f920953db2376d0', "updated_at" = '2017-12-01 14:46:52.796054' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.29ms)
+Completed 200 OK in 78ms (Views: 0.8ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-12-01 09:46:53 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "3a32f3ad6a641dd28f920953db2376d0"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (1.0ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.14ms)
+Completed 200 OK in 13ms (Views: 5.2ms | ActiveRecord: 2.4ms)
+
+
+Started PATCH "/mannequins/:id" for 127.0.0.1 at 2017-12-01 09:47:31 -0500
+Processing by MannequinsController#update as */*
+  Parameters: {"id"=>":id"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "3a32f3ad6a641dd28f920953db2376d0"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (25.4ms)[0m  [1m[34mSELECT  "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1 AND "mannequins"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 0], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.4ms)
+Completed 404 Not Found in 48ms (Views: 14.0ms | ActiveRecord: 25.7ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-12-01 09:49:52 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[33mUPDATE "users" SET "token" = 'aedf377f2bad9d3c79d1bb3c230ccc15', "updated_at" = '2017-12-01 14:49:52.470767' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.19ms)
+Completed 200 OK in 77ms (Views: 0.6ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-12-01 09:49:53 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "aedf377f2bad9d3c79d1bb3c230ccc15"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (2.5ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.35ms)
+Completed 200 OK in 13ms (Views: 4.4ms | ActiveRecord: 3.1ms)
+
+
+Started PATCH "/mannequins/:id" for 127.0.0.1 at 2017-12-01 09:50:23 -0500
+Processing by MannequinsController#update as */*
+  Parameters: {"id"=>":id"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "aedf377f2bad9d3c79d1bb3c230ccc15"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.4ms)[0m  [1m[34mSELECT  "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1 AND "mannequins"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 0], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Completed 404 Not Found in 7ms (Views: 0.6ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-12-01 09:56:24 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (1.6ms)[0m  [1m[33mUPDATE "users" SET "token" = 'f11b86b7016d594d1f9ac4e99e766a92', "updated_at" = '2017-12-01 14:56:24.511505' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.31ms)
+Completed 200 OK in 73ms (Views: 1.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-12-01 09:56:26 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "f11b86b7016d594d1f9ac4e99e766a92"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (2.2ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (4.23ms)
+Completed 200 OK in 15ms (Views: 9.2ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-12-01 09:57:03 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (7.1ms)[0m  [1m[33mUPDATE "users" SET "token" = '156860dcff3095408d36cdfe1b98b865', "updated_at" = '2017-12-01 14:57:03.824997' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.26ms)
+Completed 200 OK in 90ms (Views: 1.0ms | ActiveRecord: 13.6ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-12-01 09:57:06 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "156860dcff3095408d36cdfe1b98b865"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.5ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (0.98ms)
+Completed 200 OK in 9ms (Views: 4.3ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/mannequins/:id" for 127.0.0.1 at 2017-12-01 09:57:13 -0500
+Processing by MannequinsController#update as */*
+  Parameters: {"id"=>":id"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "156860dcff3095408d36cdfe1b98b865"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.5ms)[0m  [1m[34mSELECT  "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1 AND "mannequins"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 0], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 404 Not Found in 6ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-12-01 10:03:16 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[33mUPDATE "users" SET "token" = 'a8c208f75c979097edbb968bcbbcb158', "updated_at" = '2017-12-01 15:03:16.092519' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.45ms)
+Completed 200 OK in 79ms (Views: 0.9ms | ActiveRecord: 6.9ms)
+
+
+Started PATCH "/mannequins/:id" for 127.0.0.1 at 2017-12-01 10:03:24 -0500
+Processing by MannequinsController#update as */*
+  Parameters: {"id"=>":id"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "a8c208f75c979097edbb968bcbbcb158"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.8ms)[0m  [1m[34mSELECT  "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1 AND "mannequins"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 0], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.29ms)
+Completed 404 Not Found in 10ms (Views: 1.4ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-12-01 10:05:09 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (6.7ms)[0m  [1m[33mUPDATE "users" SET "token" = '65a1393daca4a1f85bbadca8b102ca9f', "updated_at" = '2017-12-01 15:05:09.395087' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (1.71ms)
+Completed 200 OK in 78ms (Views: 2.3ms | ActiveRecord: 7.1ms)
+
+
+Started PATCH "/mannequins/:id" for 127.0.0.1 at 2017-12-01 10:05:14 -0500
+Processing by MannequinsController#update as */*
+  Parameters: {"id"=>":id"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "65a1393daca4a1f85bbadca8b102ca9f"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.6ms)[0m  [1m[34mSELECT  "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1 AND "mannequins"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 0], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 404 Not Found in 7ms (Views: 1.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-12-01 10:05:54 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (6.5ms)[0m  [1m[33mUPDATE "users" SET "token" = 'c7ed7f510d0e9bcd0718a408c3e2dd73', "updated_at" = '2017-12-01 15:05:54.860997' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.18ms)
+Completed 200 OK in 78ms (Views: 0.9ms | ActiveRecord: 6.9ms)
+
+
+Started PATCH "/mannequins/:id" for 127.0.0.1 at 2017-12-01 10:06:03 -0500
+Processing by MannequinsController#update as */*
+  Parameters: {"id"=>":id"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "c7ed7f510d0e9bcd0718a408c3e2dd73"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.5ms)[0m  [1m[34mSELECT  "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1 AND "mannequins"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 0], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 404 Not Found in 8ms (Views: 0.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-12-01 10:14:49 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[33mUPDATE "users" SET "token" = 'd55ba2a561f85ff8953d2e3f354fecab', "updated_at" = '2017-12-01 15:14:49.880496' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.34ms)
+Completed 200 OK in 71ms (Views: 0.8ms | ActiveRecord: 1.6ms)
+
+
+Started DELETE "/mannequins/:id" for 127.0.0.1 at 2017-12-01 10:14:53 -0500
+Processing by MannequinsController#destroy as */*
+  Parameters: {"id"=>":id"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "d55ba2a561f85ff8953d2e3f354fecab"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.5ms)[0m  [1m[34mSELECT  "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1 AND "mannequins"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 0], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 404 Not Found in 8ms (Views: 1.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-12-01 10:17:26 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[33mUPDATE "users" SET "token" = '4cde26ee72f0ec83f210763c7d59b9e7', "updated_at" = '2017-12-01 15:17:26.868209' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.34ms)
+Completed 200 OK in 69ms (Views: 0.8ms | ActiveRecord: 1.9ms)
+
+
+Started DELETE "/mannequins/:id" for 127.0.0.1 at 2017-12-01 10:17:34 -0500
+Processing by MannequinsController#destroy as */*
+  Parameters: {"id"=>":id"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "4cde26ee72f0ec83f210763c7d59b9e7"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.7ms)[0m  [1m[34mSELECT  "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1 AND "mannequins"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 0], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 404 Not Found in 9ms (Views: 0.8ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/mannequins" for 127.0.0.1 at 2017-12-01 10:19:38 -0500
+Processing by MannequinsController#create as */*
+  Parameters: {"mannequin"=>{"given_name"=>"Gary", "surname"=>"Ski", "measurements"=>"41-36-39", "eye_color"=>"gray", "hair_color"=>"black", "hair_length"=>"medium", "gender"=>"male", "height"=>"6'2", "weight"=>"195"}, "submit"=>"Create"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "4cde26ee72f0ec83f210763c7d59b9e7"], ["LIMIT", 1]]
+  [1m[35m (22.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.1ms)[0m  [1m[32mINSERT INTO "mannequins" ("given_name", "surname", "measurements", "eye_color", "hair_color", "hair_length", "gender", "created_at", "updated_at", "height", "weight", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["given_name", "Gary"], ["surname", "Ski"], ["measurements", "41-36-39"], ["eye_color", "gray"], ["hair_color", "black"], ["hair_length", "medium"], ["gender", "male"], ["created_at", "2017-12-01 15:19:38.986191"], ["updated_at", "2017-12-01 15:19:38.986191"], ["height", "6'2"], ["weight", "195"], ["user_id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered MannequinSerializer with ActiveModelSerializers::Adapter::Json (0.44ms)
+Completed 201 Created in 37ms (Views: 2.2ms | ActiveRecord: 27.1ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-12-01 10:32:23 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (6.0ms)[0m  [1m[33mUPDATE "users" SET "token" = '85e3268afbc7bf9f284185e38a9ffc43', "updated_at" = '2017-12-01 15:32:23.820631' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.22ms)
+Completed 200 OK in 79ms (Views: 1.1ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-12-01 10:32:26 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "85e3268afbc7bf9f284185e38a9ffc43"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.3ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.24ms)
+Completed 200 OK in 8ms (Views: 4.7ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/mannequins/:id" for 127.0.0.1 at 2017-12-01 10:32:56 -0500
+Processing by MannequinsController#update as */*
+  Parameters: {"id"=>":id"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "85e3268afbc7bf9f284185e38a9ffc43"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.4ms)[0m  [1m[34mSELECT  "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1 AND "mannequins"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 0], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 404 Not Found in 5ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-12-01 10:50:30 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (6.8ms)[0m  [1m[33mUPDATE "users" SET "token" = '46b66f1bc30fb2c28d087002af98dd2b', "updated_at" = '2017-12-01 15:50:30.557594' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.23ms)
+Completed 200 OK in 78ms (Views: 0.7ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-12-01 10:50:34 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "46b66f1bc30fb2c28d087002af98dd2b"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.4ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.13ms)
+Completed 200 OK in 6ms (Views: 2.8ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/mannequins/:id" for 127.0.0.1 at 2017-12-01 10:57:52 -0500
+Processing by MannequinsController#update as */*
+  Parameters: {"id"=>":id"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "46b66f1bc30fb2c28d087002af98dd2b"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (48.9ms)[0m  [1m[34mSELECT  "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1 AND "mannequins"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 0], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.32ms)
+Completed 404 Not Found in 66ms (Views: 1.5ms | ActiveRecord: 49.7ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-12-01 10:57:59 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (6.4ms)[0m  [1m[33mUPDATE "users" SET "token" = 'f5f5eba7d7ee0bb5eac71fd5b8e9c43d', "updated_at" = '2017-12-01 15:57:59.092153' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.25ms)
+Completed 200 OK in 75ms (Views: 0.9ms | ActiveRecord: 7.3ms)
+
+
+Started POST "/mannequins" for 127.0.0.1 at 2017-12-01 11:01:15 -0500
+Processing by MannequinsController#create as */*
+  Parameters: {"mannequin"=>{"given_name"=>"jjj", "surname"=>"hhh", "measurements"=>"hhh", "eye_color"=>"hhh", "hair_color"=>"hhh", "hair_length"=>"hh", "gender"=>"hh", "height"=>"hhh", "weight"=>"hhh"}, "submit"=>"Create"}
+  [1m[36mUser Load (12.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "f5f5eba7d7ee0bb5eac71fd5b8e9c43d"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.3ms)[0m  [1m[32mINSERT INTO "mannequins" ("given_name", "surname", "measurements", "eye_color", "hair_color", "hair_length", "gender", "created_at", "updated_at", "height", "weight", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["given_name", "jjj"], ["surname", "hhh"], ["measurements", "hhh"], ["eye_color", "hhh"], ["hair_color", "hhh"], ["hair_length", "hh"], ["gender", "hh"], ["created_at", "2017-12-01 16:01:15.422647"], ["updated_at", "2017-12-01 16:01:15.422647"], ["height", "hhh"], ["weight", "hhh"], ["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered MannequinSerializer with ActiveModelSerializers::Adapter::Json (0.63ms)
+Completed 201 Created in 54ms (Views: 2.9ms | ActiveRecord: 19.4ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-12-01 11:01:33 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (6.7ms)[0m  [1m[33mUPDATE "users" SET "token" = 'c8afc9d15e933f2f4ee71fd8a1169156', "updated_at" = '2017-12-01 16:01:33.185804' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.18ms)
+Completed 200 OK in 79ms (Views: 0.8ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-12-01 11:01:35 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "c8afc9d15e933f2f4ee71fd8a1169156"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.7ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.28ms)
+Completed 200 OK in 10ms (Views: 4.8ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-12-01 11:02:42 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (5.9ms)[0m  [1m[33mUPDATE "users" SET "token" = '1cddd849894a45663bea8eadc8001f5e', "updated_at" = '2017-12-01 16:02:42.859322' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.47ms)
+Completed 200 OK in 77ms (Views: 1.4ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-12-01 11:04:22 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (1.6ms)[0m  [1m[33mUPDATE "users" SET "token" = 'ba9a03de5656136532faa50733b8d609', "updated_at" = '2017-12-01 16:04:22.918511' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.3ms)
+Completed 200 OK in 75ms (Views: 0.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-12-01 11:04:24 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "ba9a03de5656136532faa50733b8d609"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.5ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.51ms)
+Completed 200 OK in 10ms (Views: 5.1ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/mannequins/:id" for 127.0.0.1 at 2017-12-01 11:04:40 -0500
+Processing by MannequinsController#update as */*
+  Parameters: {"mannequin"=>{"id"=>"5", "given_name"=>"Does this work"}, "submit"=>"Update", "id"=>":id"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "ba9a03de5656136532faa50733b8d609"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.4ms)[0m  [1m[34mSELECT  "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1 AND "mannequins"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 0], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.27ms)
+Completed 404 Not Found in 6ms (Views: 1.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-12-01 11:06:47 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (1.8ms)[0m  [1m[33mUPDATE "users" SET "token" = 'f3446e4e8d007643a10655bacbef6808', "updated_at" = '2017-12-01 16:06:47.710734' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.3ms)
+Completed 200 OK in 72ms (Views: 0.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-12-01 11:06:50 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "f3446e4e8d007643a10655bacbef6808"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (1.3ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.79ms)
+Completed 200 OK in 35ms (Views: 4.3ms | ActiveRecord: 1.5ms)
+
+
+Started PATCH "/mannequins/5" for 127.0.0.1 at 2017-12-01 11:07:01 -0500
+Processing by MannequinsController#update as */*
+  Parameters: {"mannequin"=>{"id"=>"5", "given_name"=>"Work"}, "submit"=>"Update", "id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "f3446e4e8d007643a10655bacbef6808"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (6.7ms)[0m  [1m[34mSELECT  "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1 AND "mannequins"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 5], ["LIMIT", 1]]
+Unpermitted parameter: :id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "mannequins" SET "given_name" = $1, "updated_at" = $2 WHERE "mannequins"."id" = $3[0m  [["given_name", "Work"], ["updated_at", "2017-12-01 16:07:01.275997"], ["id", 5]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered MannequinSerializer with ActiveModelSerializers::Adapter::Json (0.51ms)
+Completed 200 OK in 26ms (Views: 1.1ms | ActiveRecord: 13.8ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-12-01 11:20:30 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (7.0ms)[0m  [1m[33mUPDATE "users" SET "token" = '7f2c24e9377c3c8c116b6642252182d0', "updated_at" = '2017-12-01 16:20:30.721272' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.22ms)
+Completed 200 OK in 80ms (Views: 0.8ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-12-01 11:21:15 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7f2c24e9377c3c8c116b6642252182d0"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.5ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.02ms)
+Completed 200 OK in 8ms (Views: 4.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-12-01 11:21:55 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[33mUPDATE "users" SET "token" = '11e1273d9cd04f4a3e322daa2e26a471', "updated_at" = '2017-12-01 16:21:55.619942' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.24ms)
+Completed 200 OK in 71ms (Views: 0.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-12-01 11:21:59 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "11e1273d9cd04f4a3e322daa2e26a471"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.4ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.24ms)
+Completed 200 OK in 8ms (Views: 4.6ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/mannequins/" for 127.0.0.1 at 2017-12-01 11:22:02 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/mannequins"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/sign-in" for 127.0.0.1 at 2017-12-01 11:22:18 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (6.7ms)[0m  [1m[33mUPDATE "users" SET "token" = '5b9415b528fb67de961361cb4acbba1a', "updated_at" = '2017-12-01 16:22:18.788681' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.22ms)
+Completed 200 OK in 77ms (Views: 0.7ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-12-01 11:22:21 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (13.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "5b9415b528fb67de961361cb4acbba1a"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.7ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (4.27ms)
+Completed 200 OK in 25ms (Views: 6.9ms | ActiveRecord: 14.0ms)
+
+
+Started DELETE "/mannequins/" for 127.0.0.1 at 2017-12-01 11:22:23 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/mannequins"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started DELETE "/mannequins/" for 127.0.0.1 at 2017-12-01 11:22:27 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/mannequins"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started DELETE "/mannequins/" for 127.0.0.1 at 2017-12-01 11:22:31 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/mannequins"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started DELETE "/mannequins/" for 127.0.0.1 at 2017-12-01 11:22:32 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/mannequins"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started DELETE "/mannequins/" for 127.0.0.1 at 2017-12-01 11:22:36 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/mannequins"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started DELETE "/mannequins/1" for 127.0.0.1 at 2017-12-01 11:22:38 -0500
+Processing by MannequinsController#destroy as */*
+  Parameters: {"mannequin"=>{"id"=>"1"}, "submit"=>"Delete", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "5b9415b528fb67de961361cb4acbba1a"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (1.9ms)[0m  [1m[34mSELECT  "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1 AND "mannequins"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "mannequins" WHERE "mannequins"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 8ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-12-01 11:22:45 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "5b9415b528fb67de961361cb4acbba1a"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.7ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.89ms)
+Completed 200 OK in 9ms (Views: 5.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-12-01 11:23:10 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}, "submit"=>"Sign in!"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[33mUPDATE "users" SET "token" = 'ec0dd49c20d76c5994e1c6f2ebe30f16', "updated_at" = '2017-12-01 16:23:10.064889' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.25ms)
+Completed 200 OK in 74ms (Views: 0.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-12-01 11:23:14 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "ec0dd49c20d76c5994e1c6f2ebe30f16"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.4ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.84ms)
+Completed 200 OK in 8ms (Views: 4.5ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/mannequins/5" for 127.0.0.1 at 2017-12-01 11:23:20 -0500
+Processing by MannequinsController#destroy as */*
+  Parameters: {"mannequin"=>{"id"=>"5"}, "submit"=>"Delete", "id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "ec0dd49c20d76c5994e1c6f2ebe30f16"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.6ms)[0m  [1m[34mSELECT  "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1 AND "mannequins"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "mannequins" WHERE "mannequins"."id" = $1[0m  [["id", 5]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 13ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-12-01 11:23:23 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "ec0dd49c20d76c5994e1c6f2ebe30f16"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.3ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (0.86ms)
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-12-01 11:23:36 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "ec0dd49c20d76c5994e1c6f2ebe30f16"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.6ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.33ms)
+Completed 200 OK in 9ms (Views: 4.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-12-01 11:23:48 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "ec0dd49c20d76c5994e1c6f2ebe30f16"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.5ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.33ms)
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-12-01 11:23:59 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "ec0dd49c20d76c5994e1c6f2ebe30f16"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.5ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (0.9ms)
+Completed 200 OK in 6ms (Views: 2.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-12-01 11:24:00 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "ec0dd49c20d76c5994e1c6f2ebe30f16"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.4ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.29ms)
+Completed 200 OK in 6ms (Views: 2.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-12-01 11:24:00 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "ec0dd49c20d76c5994e1c6f2ebe30f16"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.4ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (0.77ms)
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-12-01 12:08:43 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "ec0dd49c20d76c5994e1c6f2ebe30f16"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.3ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (0.7ms)
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mannequins" for 127.0.0.1 at 2017-12-01 12:10:25 -0500
+Processing by MannequinsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "ec0dd49c20d76c5994e1c6f2ebe30f16"], ["LIMIT", 1]]
+  [1m[36mMannequin Load (0.4ms)[0m  [1m[34mSELECT "mannequins".* FROM "mannequins" WHERE "mannequins"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (0.91ms)
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.6ms)
+
+
