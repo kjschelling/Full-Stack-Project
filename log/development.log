@@ -1,0 +1,43 @@
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/kjschelling/wdi/projects/FullStack/backend/config/initializers/new_framework_defaults.rb:18)
+Started POST "/sign-up" for 127.0.0.1 at 2017-12-03 17:24:04 -0500
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#signup as */*
+  Parameters: {"credentials"=>{"email"=>"jk", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jk"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jk"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.17ms)
+Completed 400 Bad Request in 99ms (Views: 4.0ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/sign-up" for 127.0.0.1 at 2017-12-03 17:24:18 -0500
+Processing by UsersController#signup as */*
+  Parameters: {"credentials"=>{"email"=>"sam", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sam"], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "sam"], ["token", "b0eaf1513a9918bcaf42f1b3e9642ce0"], ["password_digest", "$2a$10$2Latu8TfdPyGHRw2V3TkPuhdCFK1MGsd3HROy/Q1ffexjSHSsHwWG"], ["created_at", "2017-12-03 22:24:18.262978"], ["updated_at", "2017-12-03 22:24:18.262978"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "sam"], ["id", 4], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (1.23ms)
+Completed 201 Created in 93ms (Views: 11.3ms | ActiveRecord: 8.5ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-12-03 17:24:35 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"sam", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sam"], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[33mUPDATE "users" SET "token" = 'a33a53e03b5c979eaa53d696ae8b8c86', "updated_at" = '2017-12-03 22:24:35.130997' WHERE "users"."id" = $1[0m  [["id", 4]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (5.27ms)
+Completed 200 OK in 85ms (Views: 5.8ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-12-03 17:25:41 -0500
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"kj", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj"], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[33mUPDATE "users" SET "token" = '7c9ac98bd94c227de1448ba6d4a44a1d', "updated_at" = '2017-12-03 22:25:41.774332' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.23ms)
+Completed 200 OK in 69ms (Views: 0.7ms | ActiveRecord: 1.8ms)
+
+
