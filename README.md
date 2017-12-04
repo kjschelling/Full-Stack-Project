@@ -11,6 +11,21 @@ the agency can sign up, sign in, change password, and sign out.
 model. Update an existing model, show the current models they represent and delete
 a model.
 
+Planning:
+
+When starting this project, I originally wanted to do client(user) goes through agencies that have many models.
+I than decided to simplify it to agency(user) has many models.
+
+After setting up my remote repositories and initalizing my front and back end, I started on the user authentication.
+Once the auth was working I moved to the backend.
+-added my models table
+-added the relationships
+
+Next I focused on creating the model, and displaying the models.
+Once those were working, it was on to getting a single model using the id and deleting a single model using the id.
+
+Once those were functional, it was on to the styling and adding the finishing touches.
+
 Technologies used to create project:
   -HTML
   -CSS
