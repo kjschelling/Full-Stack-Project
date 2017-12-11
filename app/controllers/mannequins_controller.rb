@@ -4,7 +4,7 @@ class MannequinsController < ProtectedController
   # GET /mannequins
   def index
     @mannequins = current_user.mannequins.all
-
+    # binding.pry
     render json: @mannequins
   end
 
