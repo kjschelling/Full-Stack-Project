@@ -40,7 +40,7 @@ Future Iterations of this project will contain:
  -pictures associated with the models
  -be able to specify which field user wants to update
 
-Original ERD:
+ERD:
 https://imgur.com/gallery/Q8Ta6?s=sms
 
 User Stories:
