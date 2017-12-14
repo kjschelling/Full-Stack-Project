@@ -26,7 +26,7 @@ Future Iterations of this project will contain:
  -be able to specify which field user wants to update
 
 Original ERD:
-https://imgur.com/a/K7pL5?s=sms
+https://imgur.com/gallery/Q8Ta6?s=sms
 
 User Stories:
 -User should be able to sign up and sign in.
