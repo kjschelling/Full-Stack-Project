@@ -1,11 +1,13 @@
 Deployed Site: https://kjschelling.github.io/FullStackProject/
+
 Heroku Deployed Site:  https://sheltered-brushlands-74047.herokuapp.com/
 
 FrontEnd GitHub Repository: https://github.com/kjschelling/FullStackProject
+
 BackEnd GitHub Repository: https://github.com/kjschelling/Full-Stack-Project
 
-  This app is designed for specificly for modeling agencies. With this site
-the agency can sign up, sign in, change password, and sign out.
+Purpose:  This app was designed for modeling agencies. Using this site
+the agency can sign up, sign in, change password, and sign out (login capibilities) .
 
  While logged in the agency (user) can create a new
 model. Update an existing model, show the current models they represent and delete
@@ -13,7 +15,7 @@ a model.
 
 Planning:
 
-When starting this project, I originally wanted to do client(user) goes through agencies that have many models.
+When starting this project, I originally wanted to do client (user) goes through agencies that have many models.
 I than decided to simplify it to agency(user) has many models.
 
 After setting up my remote repositories and initalizing my front and back end, I started on the user authentication.
@@ -34,9 +36,9 @@ Technologies used to create project:
   -jQuery
   -Ajax
   -Bootstrap
-  -Handlebars
+  -Handlebars js
 
-Future Iterations of this project will contain:
+Future Iterations:
  -pictures associated with the models
  -be able to specify which field user wants to update
 
