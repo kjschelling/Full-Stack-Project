@@ -6,10 +6,12 @@ FrontEnd GitHub Repository: https://github.com/kjschelling/FullStackProject
 
 BackEnd GitHub Repository: https://github.com/kjschelling/Full-Stack-Project
 
-Purpose:  This app was designed for modeling agencies. Using this site
+Purpose:  
+
+This app was designed for modeling agencies. Using this site
 the agency can sign up, sign in, change password, and sign out (login capibilities) .
 
- While logged in the agency (user) can create a new
+While logged in the agency (user) can create a new
 model. Update an existing model, show the current models they represent and delete
 a model.
 
@@ -18,15 +20,17 @@ Planning:
 When starting this project, I originally wanted to do client (user) goes through agencies that have many models.
 I than decided to simplify it to agency(user) has many models.
 
-After setting up my remote repositories and initalizing my front and back end, I started on the user authentication.
-Once the auth was working I moved to the backend.
--added my models table
--added the relationships
+- set up remote repositories and initalized my front & back end. Then start the user authentication.
 
-Next I focused on creating the model, and displaying the models.
-Once those were working, it was on to getting a single model using the id and deleting a single model using the id.
+- Once the auth was working, move to the backend.
+- added my models table
+- added the relationships
 
-Once those were functional, it was on to the styling and adding the finishing touches.
+- Focused on creating the "model", and displaying the "models".
+
+- When working, moved to getting a singlar "model" using the id and deleting a singlar "model" with id.
+
+- finish styling and adding the final touches.
 
 Technologies used to create project:
   -HTML
